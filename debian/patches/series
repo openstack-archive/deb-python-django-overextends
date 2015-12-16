@@ -1,0 +1,3 @@
+Don_t_import_add_to_builtins_on_Django_1.9.patch
+Update_test_settings.patch
+fix_remove_path_from_template_loaders_there_are_not_default.patch

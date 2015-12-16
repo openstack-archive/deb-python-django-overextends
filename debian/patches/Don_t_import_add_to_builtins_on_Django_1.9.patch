@@ -1,0 +1,46 @@
+Description: Don't import add_to_builtins on Django 1.9
+Author: Carlton Gibson <carlton.gibson@noumenal.co.uk>
+Date: Fri, 9 Oct 2015 22:27:16 +0200
+Origin: upstream, https://github.com/stephenmcd/django-overextends/commit/0a1d70fb1238e39adba258486aac892e7f9b9448.patch
+
+diff --git a/README.rst b/README.rst
+index 3d4dc91..5f09d01 100644
+--- a/README.rst
++++ b/README.rst
+@@ -90,6 +90,19 @@ django-overextends by adding the ``overextends`` app to the
+         'overextends',
+     )
+ 
++For Django 1.9+ you must add overextends to the `builtins` key of your `TEMPLATES` setting::
++
++    TEMPLATES = [
++        {
++            'BACKEND': 'django.template.backends.django.DjangoTemplates',
++            'APP_DIRS': True,
++            'OPTIONS': {
++                'builtins': ['overextends.templatetags.overextends_tags'],
++            }
++        },
++    ]
++
++
+ Note that while the ``overextends`` tag is provided by the package
+ ``overextends.templatetags.overextends_tags``, it is unnecessary to use
+ ``{% load overextends_tags %}`` in your templates. Like the ``extends``
+diff --git a/overextends/models.py b/overextends/models.py
+index 1f2e526..ffa1519 100644
+--- a/overextends/models.py
++++ b/overextends/models.py
+@@ -1,8 +1,8 @@
+ 
+ # This app doesn't contain any models, but as its template tags need to
+ # be added to built-ins at start-up time, this is a good place to do it.
++import django
+ 
+-from django.template.base import add_to_builtins
+-
+-
+-add_to_builtins("overextends.templatetags.overextends_tags")
++if django.VERSION < (1,9):
++    from django.template.base import add_to_builtins
++    add_to_builtins("overextends.templatetags.overextends_tags")

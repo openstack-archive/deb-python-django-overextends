@@ -1,0 +1,37 @@
+Description: fix: remove path from template_loaders there are not default
+Author: Lucas Coutinho <lucas.coutinho@stormsec.com.br>
+Date: Wed, 26 Aug 2015 19:15:59 -0300
+Origin: upstream, https://github.com/lucasrc/django-overextends/commit/9787dabada703568f04b19bfbe9a5541e9813dd4.patch
+
+diff --git a/overextends/templatetags/overextends_tags.py b/overextends/templatetags/overextends_tags.py
+index 322f659..1b16690 100644
+--- a/overextends/templatetags/overextends_tags.py
++++ b/overextends/templatetags/overextends_tags.py
+@@ -54,7 +54,7 @@ def find_template(self, name, context, peeking=False):
+         except AttributeError:
+             # Django <= 1.7
+             app_template_dirs = app_directories.app_template_dirs
+-        
++
+         # Find the find_template_loader function (it moved in Django 1.8)
+         try:
+             # Django >= 1.8
+@@ -62,7 +62,7 @@ def find_template(self, name, context, peeking=False):
+         except AttributeError:
+             # Django <= 1.7
+             from django.template.loader import find_template_loader
+-        
++
+         # Store a dictionary in the template context mapping template
+         # names to the lists of template directories available to
+         # search for that template. Each time a template is loaded, its
+@@ -101,8 +101,7 @@ def find_template(self, name, context, peeking=False):
+                 # get_parent, and not when we're peeking during the
+                 # second call.
+                 if not peeking:
+-                    remove_path = os.path.abspath(path[:-len(name) - 1])
+-                    context[context_name][name].remove(remove_path)
++                    del(context[context_name][name][0])
+                 return Template(source)
+         raise TemplateDoesNotExist(name)
+ 

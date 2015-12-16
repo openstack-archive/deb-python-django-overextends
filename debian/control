@@ -1,0 +1,45 @@
+Source: python-django-overextends
+Section: python
+Priority: optional
+Maintainer: PKG OpenStack <openstack-devel@lists.alioth.debian.org>
+Uploaders: Thomas Goirand <zigo@debian.org>,
+Build-Depends: debhelper (>= 9),
+               dh-python,
+               python-all,
+               python-setuptools,
+               python3-all,
+               python3-setuptools,
+Build-Depends-Indep: python-django,
+                     python3-django,
+Standards-Version: 3.9.6
+Vcs-Browser: http://anonscm.debian.org/gitweb/?p=openstack/python-django-overextends.git
+Vcs-Git: git://anonscm.debian.org/openstack/python-django-overextends.git
+Homepage: http://github.com/stephenmcd/django-overextends
+
+Package: python-django-overextends
+Architecture: all
+Depends: ${misc:Depends},
+         ${python:Depends},
+Description: reusable app providing circular template inheritance - Python 2.7
+ A Django reusable app providing the overextends template tag, a drop-in
+ replacement for Django's extends tag, which allows you to use circular
+ template inheritance.
+ .
+ The primary use-case for overextends is to simultaneously override and extend
+ templates from other reusable apps, in your own Django project.
+ .
+ This package contains the Python 2.7 module.
+
+Package: python3-django-overextends
+Architecture: all
+Depends: ${misc:Depends},
+         ${python3:Depends},
+Description: reusable app providing circular template inheritance - Python 3.x
+ A Django reusable app providing the overextends template tag, a drop-in
+ replacement for Django's extends tag, which allows you to use circular
+ template inheritance.
+ .
+ The primary use-case for overextends is to simultaneously override and extend
+ templates from other reusable apps, in your own Django project.
+ .
+ This package contains the Python 3.x module.

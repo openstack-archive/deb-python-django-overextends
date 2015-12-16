@@ -1,0 +1,26 @@
+Description: Update test settings
+Author: Stephen McDonald <steve@jupo.org>
+Date: Mon, 7 Dec 2015 12:24:23 +1100
+Origin: upstream, https://github.com/stephenmcd/django-overextends/commit/97261ad3e7732082953e14def6c24c59186ad3a1.patch
+
+diff --git a/test_project/settings.py b/test_project/settings.py
+index 0607363..a0428ce 100644
+--- a/test_project/settings.py
++++ b/test_project/settings.py
+@@ -27,6 +27,16 @@
+     'django.template.loaders.app_directories.Loader',
+ )
+ 
++TEMPLATES = [
++    {
++        'BACKEND': 'django.template.backends.django.DjangoTemplates',
++        'APP_DIRS': True,
++        'OPTIONS': {
++            'builtins': ['overextends.templatetags.overextends_tags'],
++        }
++    },
++]
++
+ INSTALLED_APPS = (
+     'overextends',
+ )
