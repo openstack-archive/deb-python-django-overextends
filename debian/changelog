@@ -1,5 +1,5 @@
 python-django-overextends (0.4.0-1) unstable; urgency=medium
 
-  * Initial release. (Closes: #XXXXXX)
+  * Initial release. (Closes: #808727)
 
  -- Thomas Goirand <zigo@debian.org>  Wed, 16 Dec 2015 09:36:55 +0100
