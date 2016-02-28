@@ -14,7 +14,7 @@ Build-Depends-Indep: python-django,
 Standards-Version: 3.9.6
 Vcs-Browser: http://anonscm.debian.org/gitweb/?p=openstack/python-django-overextends.git
 Vcs-Git: git://anonscm.debian.org/openstack/python-django-overextends.git
-Homepage: http://github.com/stephenmcd/django-overextends
+Homepage: https://github.com/stephenmcd/django-overextends
 
 Package: python-django-overextends
 Architecture: all
