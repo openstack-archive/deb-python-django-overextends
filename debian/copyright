@@ -1,6 +1,6 @@
 Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: django-overextends
-Source: http://github.com/stephenmcd/django-overextends
+Source: https://github.com/stephenmcd/django-overextends
 
 Files: debian/*
 Copyright: (c) 2014, Thomas Goirand <zigo@debian.org>
