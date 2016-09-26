@@ -12,8 +12,8 @@ Build-Depends: debhelper (>= 9),
 Build-Depends-Indep: python-django,
                      python3-django,
 Standards-Version: 3.9.6
-Vcs-Browser: https://anonscm.debian.org/cgit/openstack/python-django-overextends.git/
-Vcs-Git: https://anonscm.debian.org/git/openstack/python-django-overextends.git
+Vcs-Browser: https://git.openstack.org/cgit/openstack/deb-python-django-overextends?h=debian%2Fnewton
+Vcs-Git: https://git.openstack.org/openstack/deb-python-django-overextends -b debian/newton
 Homepage: https://github.com/stephenmcd/django-overextends
 
 Package: python-django-overextends
