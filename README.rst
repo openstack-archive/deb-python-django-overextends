@@ -1,3 +1,12 @@
+========================
+Team and repository tags
+========================
+
+.. image:: http://governance.openstack.org/badges/deb-python-django-overextends.svg
+    :target: http://governance.openstack.org/reference/tags/index.html
+
+.. Change things from this point on
+
 .. image:: https://secure.travis-ci.org/stephenmcd/django-overextends.png?branch=master
    :target: http://travis-ci.org/stephenmcd/django-overextends
 
